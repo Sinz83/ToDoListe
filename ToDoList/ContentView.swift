@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var taskName: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        HStack(alignment:.top){
+            TextField("Aufgabe Name",text: $taskName)
+            //taskname macht deb geschrieben Text über taskfield zugänglich 
+            Button(action: {}){
+                Text ("Füge Neue Task")
+            }
         }
-        .padding()
+        
+        
+        VStack(alignment:.leading){
+            HStack{
+                List{
+                    Text("Dummy Aufgabe")
+                }
+            }
+            Spacer()
+        }
     }
 }
+
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
